@@ -3,6 +3,7 @@ This project is a simple Vote Casting System implemented in C, designed as a sem
 Provide Persistent storage Vote counts are saved to a file (program.txt) and loaded when the program starts, ensuring data persistence across sessions.
 
 *Code Overview :*
+
 Functions
 1. void castvote(int* arr)
 Prompts the user to select a candidate and updates the vote count for the chosen party.
