@@ -12,7 +12,7 @@ void castvote(int* arr)
    printf("\t2. PMLN\n");
    printf("\t3. PPP\n");
    printf("\t4. Back to Main\n");
-   printf("Input your choice from 1-3 :\n ");
+   printf("Input your choice from 1-4 :\n ");
    scanf("%d",&choice);
    system("CLS");
    switch(choice)
@@ -52,24 +52,26 @@ void Exit(int* arr){
 int main()
 {
 	int voting_array[3]={0,0,0};
-	int point=0;
-	int current_vote;
-	FILE *voting_PTR;
-	voting_PTR=fopen("program.txt","r");
-	while ( (current_vote = getw(voting_PTR)) != EOF )
+	FILE *voting_PTR=fopen("program.txt","r");
+	
+	int i;
+	for(i=0;1;i++)
 	{
-		voting_array[point]=current_vote;
-		point++;
+		int current_vote = getw(voting_PTR);
+		if( current_vote== EOF ){
+			break;
+		}
+		voting_array[i]=current_vote;
     }
     close(voting_PTR);
-	
+    
 	int choice;		
 	do{
 		system("CLS");
 		votesCount(voting_array);  	
 	    
 		printf("Welcome to Voting 2021...\n\n");
-	    printf("Select 1,2 or 3 to proceed:\n\n");
+	    printf("Select 0,1 to proceed:\n\n");
 	    printf("\t0. Exit\n");
 	    printf("\t1. Cast the Vote\n");
     	printf("Please enter your choice: \n");
@@ -82,8 +84,6 @@ int main()
     	}
         else if(choice==1){
         	castvote(voting_array);	
-		}
-		else{
 		}
    }while(1);
    return 0;
