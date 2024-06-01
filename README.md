@@ -1,6 +1,7 @@
 *Project Description :*
 This project is a simple Vote Casting System implemented in C, designed as a semester project for the Programming Fundamentals course. The system allows users to cast votes for three different political parties, view the current vote counts, and save the vote counts to a file. The project utilizes fundamental programming concepts such as file handling, functions, loops, and conditional statements.
 Provide Persistent storage Vote counts are saved to a file (program.txt) and loaded when the program starts, ensuring data persistence across sessions.
+
 *Code Overview :*
 Functions
 1. void castvote(int* arr)
